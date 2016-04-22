@@ -19,6 +19,8 @@ public class VariablesAndNames {
         average_passengers_per_car = passengers / cars_driven;
         // Command + K will commit changes
 
+        //Wow nick, that's so cool!
+
         System.out.println( "There are " + cars + " cars available." );
         System.out.println( "There are only " + drivers + " drivers available." );
         System.out.println( "There will be " + cars_not_driven + " empty cars today." );
