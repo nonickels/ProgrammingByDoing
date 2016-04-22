@@ -26,7 +26,7 @@ public class YourSchedule {
 
         System.out.println("___________________________________________________");
         System.out.println("  |                          |                    |");
-        System.out.println(" #|       Course Title" + "       |      Professor     |");
+        System.out.println("# |       Course Title       |      Professor     |");
         System.out.println("__|__________________________|____________________|");
         System.out.println("1 |   " + course1 + "|" + "        " + professor1 + "|");
         System.out.println("2 |      " + course2 + "|" + "       " + professor2 + "|");
