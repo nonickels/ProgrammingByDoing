@@ -6,7 +6,15 @@ import java.util.Scanner;
  */
 public class BMICalc  {
     public static void main (String[] args)  {
+
         Scanner keyboard = new Scanner(System.in);
+
+
+        final double INCHES_IN_FEET = 12;
+        final double FEET_IN_METERS = 3.28084;
+        final double POUNDS_IN_KILOS = 0.453592;
+
+
         double feet;
         double inches;
         double pounds;
