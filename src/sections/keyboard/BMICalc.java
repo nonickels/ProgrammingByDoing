@@ -29,13 +29,13 @@ public class BMICalc  {
         System.out.print("And inches? ");
         inches = keyboard.nextDouble();
 
-        calcHeight = ((feet * 12) + inches);
+        calcHeight = (feet + (inches / INCHES_IN_FEET));
 
         System.out.print("How much do you weigh in pounds? ");
         pounds = keyboard.nextDouble();
 
-        calcWeightImp = (pounds * 0.45);
-        calcHeightImp = (calcHeight * 0.025);
+        calcWeightImp = (pounds * POUNDS_IN_KILOS);
+        calcHeightImp = (calcHeight / FEET_IN_METERS);
         calcBmi = (calcWeightImp / (calcHeightImp * calcHeightImp) );
 
         System.out.println("Your height (feet only): " + feet);
