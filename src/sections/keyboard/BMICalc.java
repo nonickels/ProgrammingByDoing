@@ -7,23 +7,34 @@ import java.util.Scanner;
 public class BMICalc  {
     public static void main (String[] args)  {
         Scanner keyboard = new Scanner(System.in);
-        double heightInMeters;
-        double weightInKg;
+        double feet;
+        double inches;
+        double pounds;
         double calcBmi;
+        double calcHeight;
+        double calcHeightImp;
+        double calcWeightImp;
 
-        System.out.print("How tall are you? ");
-        heightInMeters = keyboard.nextDouble();
+        System.out.print("How tall are you in feet? ");
+        feet = keyboard.nextDouble();
 
-        System.out.print("How much do you weigh? ");
-        weightInKg = keyboard.nextDouble();
+        System.out.print("And inches? ");
+        inches = keyboard.nextDouble();
 
-        calcBmi = (weightInKg / (heightInMeters * heightInMeters) );
+        calcHeight = ((feet * 12) + inches);
 
-        System.out.println("Your height in m: " + heightInMeters);
-        System.out.println("Your weight in kg: " + weightInKg);
+        System.out.print("How much do you weigh in pounds? ");
+        pounds = keyboard.nextDouble();
+
+        calcWeightImp = (pounds * 0.45);
+        calcHeightImp = (calcHeight * 0.025);
+        calcBmi = (calcWeightImp / (calcHeightImp * calcHeightImp) );
+
+        System.out.println("Your height (feet only): " + feet);
+        System.out.println("Your height (inches): " + inches);
+        System.out.println("Your weight in pounds: " + pounds);
         System.out.println();
         System.out.println("Your BMI is " + calcBmi);
-
 
     }
 
