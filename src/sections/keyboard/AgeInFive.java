@@ -5,6 +5,8 @@ import java.util.Scanner;
  */
 public class AgeInFive {
     public static void main(String[] args) {
+
+        //TODO: Indenting needs to be consistent. https://google.github.io/styleguide/javaguide.html
         Scanner keyboard = new Scanner(System.in);
         String name;
         int age;
