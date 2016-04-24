@@ -1,5 +1,4 @@
-package sections.ifStatements; // Remove this line to run in terminal
-
+package sections.ifStatements;
 /**
  * Created by Nick on 4/23/16.
  */
