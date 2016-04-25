@@ -1,4 +1,4 @@
-package sections.guis;
+package sections.ifStatements;
 import java.util.Scanner;
 
 /**
