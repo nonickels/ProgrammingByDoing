@@ -15,8 +15,8 @@ public class CompareToChallenge
         int b = "angry".compareTo("angryfan");
         System.out.println(b);
 
-        System.out.print("Comparing \"pringles\" with \"pringlescan\" produces ");
-        int c = "pringles".compareTo("pringlescan");
+        System.out.print("Comparing \"pringlescan\" with \"pringles\" produces ");
+        int c = "pringlescan".compareTo("pringles");
         System.out.println(c);
 
         System.out.print("Comparing \"nasty\" with \"nastyapple\" produces ");
