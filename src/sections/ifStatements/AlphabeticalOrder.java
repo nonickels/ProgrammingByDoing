@@ -12,22 +12,22 @@ public class AlphabeticalOrder
         System.out.print("What is your last name?");
         String lastName = keyboard.next();
 
-        if ( lastName.compareTo("Carswell") <= lastName.compareTo("Jones") ) {
+        if ( "carswell".compareTo(lastName) >= 0 ) {
             System.out.println("You don't have to wait long " + lastName + ".");
         }
-        else if ( lastName.compareTo("Jones") > lastName.compareTo("Carswell")) {
+        else if ( "jones".compareTo(lastName) >= 0 ) {
             System.out.println("That's not bad " + lastName + ".");
         }
 
-        else if ( lastName.compareTo("Smith") > lastName.compareTo("Jones") ) {
+        else if ( "smith".compareTo(lastName) >= 0 ) {
             System.out.println("Looks like a bit of a wait " + lastName + ".");
         }
 
-        else if ( lastName.compareTo("Young") >= lastName.compareTo("Smith") ) {
+        else if ( "young".compareTo(lastName) >= 0 ) {
             System.out.println("It's gonna be a while " + lastName + ".");
         }
 
-        else if ( lastName.compareTo("Young") <= lastName.compareTo("ZZZZZ") ) {
+        else if ( "zzzzz".compareTo(lastName) > 0 ) {
             System.out.println("Not going anywhere for a while, " + lastName + "?");
         }
         else {
