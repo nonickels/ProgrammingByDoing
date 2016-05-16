@@ -1,4 +1,4 @@
-package sections.ifStatements;
+package sections.rndNumbers;
 import java.util.Random;
 /**
  * Created by Nick on 5/16/16.
