@@ -20,7 +20,7 @@ public class KeepGuessing
         {
 
             System.out.println("Incorrect. Please try again.");
-            System.out.print("Guess:" );
+            System.out.print("Guess: " );
             guessedNum = keyboard.nextInt();
         }
         {
