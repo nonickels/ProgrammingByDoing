@@ -26,9 +26,7 @@ public class NumberGuessingWithACounter
             guessedNum = keyboard.nextInt();
             timesGuessed++;
         }
-        {
             System.out.println("Correct. The answer was indeed " + secretNum + ".");
             System.out.println("It only took you " + timesGuessed + " tries.");
-        }
     }
 }

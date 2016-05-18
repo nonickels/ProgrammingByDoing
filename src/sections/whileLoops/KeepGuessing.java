@@ -23,8 +23,6 @@ public class KeepGuessing
             System.out.print("Guess: " );
             guessedNum = keyboard.nextInt();
         }
-        {
             System.out.println("Correct. The answer was indeed " + secretNum + ".");
-        }
     }
 }
