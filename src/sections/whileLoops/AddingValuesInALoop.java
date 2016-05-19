@@ -24,10 +24,12 @@ public class AddingValuesInALoop
             System.out.print("Number: ");
             numInput = keyboard.nextInt();
             numInputTotal += numInput;
-            System.out.println("The total so far is " + numInputTotal);
+            if (!(numInput == 0))
+                System.out.println("The total so far is " + numInputTotal);
+            else
+                System.out.println();
         }
 
-        System.out.println();
         System.out.println("The total is " + numInputTotal);
 
     }
