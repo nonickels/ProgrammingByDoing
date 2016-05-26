@@ -17,6 +17,7 @@ public class BabyNim
 
 
 
+
         while (coinAValue + coinBValue + coinCValue > 0)
         {
             System.out.println("A:" + coinAValue + "\t" + "B:" + coinBValue + "\t" + "C:" + coinCValue);

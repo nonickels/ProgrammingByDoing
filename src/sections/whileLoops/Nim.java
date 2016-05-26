@@ -10,79 +10,141 @@ public class Nim
     {
         Scanner keyboard = new Scanner(System.in);
 
-        String userName1, userName2;
-        String userPileChoice1, userPileChoice2;
-        int user1Turn = 1;
-        int user2Turn = 2;
-        String pileA, pileB, pileC;
-        int pileAValue = 3; //storage variable of pileA
-        int pileBValue = 3; //storage variable of pileB
-        int pileCValue = 3; //storage variable of pileC
-        int removalValue;
+        int pile1Val = 3; // Pile 1 Value
+        int pile2Val = 3; // Pile 2 Value
+        int pile3Val = 3; // Pile 3 Value
+        int playerTurn = 0; // Player Turn
 
-        System.out.println("Player 1, enter your name: ");
-        userName1 = keyboard.nextLine();
+        System.out.println("Player 1, enter name: "); // Player 1 name prompt
+        String playerName1 = keyboard.next(); // Player 1 name variable storage
 
-        System.out.println("Player 2, enter your name: ");
-        userName2 = keyboard.nextLine();
+        System.out.println("Player 2, enter name: "); // Player 2 name prompt
+        String playerName2 = keyboard.next(); // Player 2 name variable storage
 
-        do
+        while (pile1Val + pile2Val + pile3Val > 1)
         {
-            if(user1Turn != user2Turn) // If the userTurn values are not equal, player1 is up.
+
+            if (playerTurn % 2 == 0) //Player1 turn
             {
-                user1Turn++;
-                System.out.println(userName1 + ", choose a pile: ");
-                userPileChoice1 = keyboard.nextLine();
+                System.out.println("A:" + pile1Val + "\t" + "B:" + pile2Val + "\t" + "C:" + pile3Val); // Prints current pile values
+                System.out.println(); // Space
 
-                if(userPileChoice1.equals("a"))
+                System.out.println(playerName1 + ", choose a pile: "); // Player 1 pile choice prompt
+                String pileChoice = keyboard.next(); // Pile choice variable storage
+
+
+                System.out.println("How many to remove from " + pileChoice + ": "); // Amount to remove prompt
+                int pileRemovalValue = keyboard.nextInt(); // Value of removal choice variable storage
+
+                do //Pre-test check before moving on with the while loop
                 {
-                    System.out.println("How many to remove from pile a: ");
-                    removalValue = keyboard.nextInt();
-                    pileAValue -= removalValue;
+                    if (pileRemovalValue < 1) // Constraint if pileRemovalValue is less than one
+                    {
+                        System.out.println("You must choose at least one. Choose again: ");
+                        pileRemovalValue = keyboard.nextInt();
+                    }
+
+                    if (pileChoice.equals("a") && pileRemovalValue > pile1Val) // This DOESNT WORK!!!
+                    {
+                        System.out.println("Pile " + pileChoice + " doesn't have that many. Choose again: ");
+                        pileRemovalValue = keyboard.nextInt();
+                    }
+                    if (pileChoice.equals("b") && pileRemovalValue > pile2Val) // This DOESNT WORK!!!
+                    {
+                        System.out.println("Pile " + pileChoice + " doesn't have that many. Choose again: ");
+                        pileRemovalValue = keyboard.nextInt();
+                    }
+                    if (pileChoice.equals("c") && pileRemovalValue > pile3Val) // This DOESNT WORK!!!
+                    {
+                        System.out.println("Pile " + pileChoice + " doesn't have that many. Choose again: ");
+
+                    }
+                }
+                    while (pileRemovalValue < 0);
+
+                if (pileChoice.equals("a"))
+                {
+                    pile1Val -= pileRemovalValue;
+                }
+                else if (pileChoice.equals("b"))
+                {
+                    pile2Val -= pileRemovalValue;
+                }
+                else if (pileChoice.equals("c"))
+                {
+                    pile3Val -= pileRemovalValue;
+                }
+                playerTurn++;
 
                 }
-                else if(userPileChoice1.equals("b"))
+
+            else if(playerTurn % 2 != 0) //Player2 turn
+            {
+                System.out.println("A:" + pile1Val + "\t" + "B:" + pile2Val + "\t" + "C:" + pile3Val);
+                System.out.println();
+
+                System.out.println(playerName2 + ", choose a pile: ");
+                String pileChoice = keyboard.next();
+
+                System.out.println("How many to remove from " + pileChoice + ": ");
+                int pileRemovalValue = keyboard.nextInt();
+
+                do //Pre-test check before moving on with the while loop
                 {
-                    System.out.println("How many to remove from pile b: ");
-                    removalValue = keyboard.nextInt();
-                    pileBValue -= removalValue;
+                    if (pileRemovalValue < 1) // Constraint if pileRemovalValue is less than one
+                    {
+                        System.out.println("You must choose at least one. Choose again: ");
+                        pileRemovalValue = keyboard.nextInt();
+                    }
+
+                    if(pileChoice.equals("a") && pileRemovalValue > pile1Val) // This DOESNT WORK!!!
+                    {
+                        System.out.println("Pile " + pileChoice + " doesn't have that many. Choose again: ");
+                        pileRemovalValue = keyboard.nextInt();
+                    }
+                    if(pileChoice.equals("b") && pileRemovalValue > pile2Val) // This DOESNT WORK!!!
+                    {
+                        System.out.println("Pile " + pileChoice + " doesn't have that many. Choose again: ");
+                        pileRemovalValue = keyboard.nextInt();
+                    }
+                    if(pileChoice.equals("c") && pileRemovalValue > pile3Val) // This DOESNT WORK!!!
+                    {
+                        System.out.println("Pile " + pileChoice + " doesn't have that many. Choose again: ");
+                        pileRemovalValue = keyboard.nextInt();
+                    }
+
                 }
-                else
-                {
-                    System.out.println("How many to remove from pile c: ");
-                    removalValue = keyboard.nextInt();
-                    pileCValue -= removalValue;
-                }
+                while (pileRemovalValue < 0);
+
+            if (pileChoice.equals("a"))
+            {
+                pile1Val -= pileRemovalValue;
             }
-            else //Else userTurn values are equal, player2 is up.
+            else if (pileChoice.equals("b"))
             {
-                user2Turn++;
-                System.out.println(userName2 + ", choose a pile: ");
-                userPileChoice2 = keyboard.nextLine();
+                pile2Val -= pileRemovalValue;
+            }
+            else if (pileChoice.equals("c"))
+            {
+                pile3Val -= pileRemovalValue;
+            }
+            playerTurn++;
 
-                if (userPileChoice2.equals("a"))
-                {
-                    System.out.println("How many to remove from pile a: ");
-                    removalValue = keyboard.nextInt();
-                    pileAValue -= removalValue;
-
-
-                }
-                else if (userPileChoice2.equals("b"))
-                {
-                    System.out.println("How many to remove from pile b: ");
-                    removalValue = keyboard.nextInt();
-                    pileBValue -= removalValue;
-                }
-                else
-                {
-                    System.out.println("How many to remove from pile c: ");
-                    removalValue = keyboard.nextInt();
-                    pileCValue -= removalValue;
-                }
             }
         }
-        while(pileAValue + pileBValue + pileCValue > 1);
 
+        System.out.println("A:" + pile1Val + "\t" + "B:" + pile2Val + "\t" + "C:" + pile3Val); // Prints current pile values
+
+        if (playerTurn % 2 == 0)
+        {
+            System.out.println(playerName1 + ", you must take the last counter, so you lose!");
+            System.out.println(playerName2 + ", you win!");
+        }
+
+        else if (playerTurn % 2 != 0)
+        {
+            System.out.println(playerName2 + ", you must take the last counter, so you lose!");
+            System.out.println(playerName1 + ", you win!");
+        }
     }
 }
