@@ -37,8 +37,9 @@ public class Blackjack
 
                //While user hits, do this
 
-         {
-            do {
+
+             while (playerHandTotal < 21 && dealerHandTotal < 21)
+             {
 
                 int playerChoiceHit = 2 + r.nextInt(10);
 
@@ -62,36 +63,30 @@ public class Blackjack
                     System.out.println("His total was " + dealerHandTotal);
                     System.out.println();
 
-                    do
+                    while (dealerHandTotal <= 16 && playerHandTotal != dealerHandTotal)
                     {
-                        int dealerChoiceHit = 2 + r.nextInt(10); //do this while the dealers hand remains under 16
+                        {
+                            int dealerChoiceHit = 2 + r.nextInt(10); //do this while the dealers hand remains under 16
 
-                        if(dealerHandTotal <= 16)
-                        {
-                            System.out.println("Dealer chooses to hit.");
-                            System.out.println("The dealer draws a " + dealerChoiceHit);
-                            dealerHandTotal += dealerChoiceHit;
-                            System.out.println();
-                            System.out.println("The dealer's total is " + dealerHandTotal);
-                            System.out.println();
-                        }
-                        else if(dealerHandTotal > 16 && dealerHandTotal <= 21)
-                        {
-                            System.out.println("The dealer's total is " + dealerHandTotal);
-                            System.out.println();
-                            System.out.println("The dealer stays.");
-                            System.out.println();
+                            if (dealerHandTotal <= 16) {
+                                System.out.println("Dealer chooses to hit.");
+                                System.out.println("The dealer draws a " + dealerChoiceHit);
+                                dealerHandTotal += dealerChoiceHit;
+                                System.out.println();
+                                System.out.println("The dealer's total is " + dealerHandTotal);
+                                System.out.println();
+                            } else if (dealerHandTotal > 16 && dealerHandTotal <= 21) {
+                                System.out.println("The dealer's total is " + dealerHandTotal);
+                                System.out.println();
+                                System.out.println("The dealer stays.");
+                                System.out.println();
+                            }
                         }
                     }
-                    while (dealerHandTotal <= 16 && playerHandTotal == dealerHandTotal);
+
 
                 }
             }
-
-            while (playerHandTotal < 21 && dealerHandTotal < 21);
-        }
-
-
 
 
         System.out.println("The dealer's total is " + dealerHandTotal);
