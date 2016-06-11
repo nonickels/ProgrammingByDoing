@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
  * Created by Nick on 4/23/16.
  */
 public class WeekdayName {
-        private static String weekday_name( int weekday )
+        public static String weekday_name( int weekday )
         {
             String result;
 
